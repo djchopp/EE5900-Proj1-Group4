@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC    -shared -Wl,-soname,libgtest.so -o libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/home/ros/EE5900/EE5900-Proj1-Group4/djchopp/InstallingandConfiguringROSEnvironment/catkin_ws/build/gtest/src -lpthread -Wl,-rpath,/home/ros/EE5900/EE5900-Proj1-Group4/djchopp/InstallingandConfiguringROSEnvironment/catkin_ws/build/gtest/src 
