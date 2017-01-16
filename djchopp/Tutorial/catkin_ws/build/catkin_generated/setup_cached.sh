@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/src:$ROS_PACKAGE_PATH"

@@ -117,6 +117,7 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/build/beginner_tutorials/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

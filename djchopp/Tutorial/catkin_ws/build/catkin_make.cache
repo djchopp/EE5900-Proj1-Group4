@@ -1,2 +1,2 @@
-
+beginner_tutorials
 -DCATKIN_DEVEL_PREFIX=/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/install -G Unix Makefiles
