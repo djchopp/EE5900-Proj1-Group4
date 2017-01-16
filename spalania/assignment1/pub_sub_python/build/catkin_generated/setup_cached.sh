@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src:$ROS_PACKAGE_PATH"
