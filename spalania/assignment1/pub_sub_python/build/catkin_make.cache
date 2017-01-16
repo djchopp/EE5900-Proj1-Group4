@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel -DCMAKE_INSTALL_PREFIX=/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install -G Unix Makefiles
