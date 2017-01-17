@@ -5,4 +5,6 @@
           WIND
           HUMIDITY-VAL
           HUMIDITY
+          STATUS-VAL
+          STATUS
 ))

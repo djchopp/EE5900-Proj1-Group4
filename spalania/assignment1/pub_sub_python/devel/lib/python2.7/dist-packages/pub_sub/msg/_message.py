@@ -7,14 +7,15 @@ import struct
 
 
 class message(genpy.Message):
-  _md5sum = "063f2adf7b9328c9f1d17b695d5edc45"
+  _md5sum = "fa5a27ee21ff108a20dd5dc60316df07"
   _type = "pub_sub/message"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """float32 temperature
 float32 wind
-float32 humidity"""
-  __slots__ = ['temperature','wind','humidity']
-  _slot_types = ['float32','float32','float32']
+float32 humidity
+string status"""
+  __slots__ = ['temperature','wind','humidity','status']
+  _slot_types = ['float32','float32','float32','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -24,7 +25,7 @@ float32 humidity"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       temperature,wind,humidity
+       temperature,wind,humidity,status
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -39,10 +40,13 @@ float32 humidity"""
         self.wind = 0.
       if self.humidity is None:
         self.humidity = 0.
+      if self.status is None:
+        self.status = ''
     else:
       self.temperature = 0.
       self.wind = 0.
       self.humidity = 0.
+      self.status = ''
 
   def _get_types(self):
     """
@@ -58,6 +62,15 @@ float32 humidity"""
     try:
       _x = self
       buff.write(_struct_3f.pack(_x.temperature, _x.wind, _x.humidity))
+      _x = self.status
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      if python3:
+        buff.write(struct.pack('<I%sB'%length, length, *_x))
+      else:
+        buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -72,6 +85,15 @@ float32 humidity"""
       start = end
       end += 12
       (_x.temperature, _x.wind, _x.humidity,) = _struct_3f.unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.status = str[start:end].decode('utf-8')
+      else:
+        self.status = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -86,6 +108,15 @@ float32 humidity"""
     try:
       _x = self
       buff.write(_struct_3f.pack(_x.temperature, _x.wind, _x.humidity))
+      _x = self.status
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      if python3:
+        buff.write(struct.pack('<I%sB'%length, length, *_x))
+      else:
+        buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -101,6 +132,15 @@ float32 humidity"""
       start = end
       end += 12
       (_x.temperature, _x.wind, _x.humidity,) = _struct_3f.unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.status = str[start:end].decode('utf-8')
+      else:
+        self.status = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
