@@ -7,5 +7,6 @@
 # new environment variables
 
 # modified environment variables
+export CPATH="/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include:$CPATH"
 export PWD="/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build"
-export ROS_PACKAGE_PATH="/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src:/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks"
+export PYTHONPATH="/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/lib/python2.7/dist-packages:$PYTHONPATH"

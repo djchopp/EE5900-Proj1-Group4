@@ -33,7 +33,35 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pub_sub/msg" TYPE FILE FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pub_sub/cmake" TYPE FILE FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_sub-msg-paths.cmake")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include/pub_sub")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/share/common-lisp/ros/pub_sub")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/lib/python2.7/dist-packages/pub_sub")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/lib/python2.7/dist-packages/pub_sub")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_sub.pc")
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pub_sub/cmake" TYPE FILE FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_sub-msg-extras.cmake")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

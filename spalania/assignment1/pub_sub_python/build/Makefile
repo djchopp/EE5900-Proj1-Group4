@@ -241,82 +241,108 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_cpp
+# Target rules for targets named _pub_sub_generate_messages_check_deps_message
 
 # Build rule for target.
-roscpp_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
-.PHONY : roscpp_generate_messages_cpp
+_pub_sub_generate_messages_check_deps_message: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _pub_sub_generate_messages_check_deps_message
+.PHONY : _pub_sub_generate_messages_check_deps_message
 
 # fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f pub_sub/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make pub_sub/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
+_pub_sub_generate_messages_check_deps_message/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/_pub_sub_generate_messages_check_deps_message.dir/build.make pub_sub/CMakeFiles/_pub_sub_generate_messages_check_deps_message.dir/build
+.PHONY : _pub_sub_generate_messages_check_deps_message/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_lisp
+# Target rules for targets named pub_sub_gencpp
 
 # Build rule for target.
-roscpp_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
-.PHONY : roscpp_generate_messages_lisp
+pub_sub_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub_gencpp
+.PHONY : pub_sub_gencpp
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f pub_sub/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make pub_sub/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+pub_sub_gencpp/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/pub_sub_gencpp.dir/build.make pub_sub/CMakeFiles/pub_sub_gencpp.dir/build
+.PHONY : pub_sub_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_py
+# Target rules for targets named pub_sub_generate_messages
 
 # Build rule for target.
-roscpp_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
-.PHONY : roscpp_generate_messages_py
+pub_sub_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub_generate_messages
+.PHONY : pub_sub_generate_messages
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	$(MAKE) -f pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/build.make pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+pub_sub_generate_messages/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/pub_sub_generate_messages.dir/build.make pub_sub/CMakeFiles/pub_sub_generate_messages.dir/build
+.PHONY : pub_sub_generate_messages/fast
 
 #=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_cpp
+# Target rules for targets named pub_sub_generate_messages_cpp
 
 # Build rule for target.
-rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
-.PHONY : rosgraph_msgs_generate_messages_cpp
+pub_sub_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub_generate_messages_cpp
+.PHONY : pub_sub_generate_messages_cpp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f pub_sub/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make pub_sub/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+pub_sub_generate_messages_cpp/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/pub_sub_generate_messages_cpp.dir/build.make pub_sub/CMakeFiles/pub_sub_generate_messages_cpp.dir/build
+.PHONY : pub_sub_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_lisp
+# Target rules for targets named pub_sub_generate_messages_lisp
 
 # Build rule for target.
-rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_lisp
-.PHONY : rosgraph_msgs_generate_messages_lisp
+pub_sub_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub_generate_messages_lisp
+.PHONY : pub_sub_generate_messages_lisp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f pub_sub/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make pub_sub/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+pub_sub_generate_messages_lisp/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/pub_sub_generate_messages_lisp.dir/build.make pub_sub/CMakeFiles/pub_sub_generate_messages_lisp.dir/build
+.PHONY : pub_sub_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_py
+# Target rules for targets named pub_sub_generate_messages_py
 
 # Build rule for target.
-rosgraph_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_py
-.PHONY : rosgraph_msgs_generate_messages_py
+pub_sub_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub_generate_messages_py
+.PHONY : pub_sub_generate_messages_py
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f pub_sub/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make pub_sub/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+pub_sub_generate_messages_py/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/pub_sub_generate_messages_py.dir/build.make pub_sub/CMakeFiles/pub_sub_generate_messages_py.dir/build
+.PHONY : pub_sub_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named pub_sub_genlisp
+
+# Build rule for target.
+pub_sub_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub_genlisp
+.PHONY : pub_sub_genlisp
+
+# fast build rule for target.
+pub_sub_genlisp/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/pub_sub_genlisp.dir/build.make pub_sub/CMakeFiles/pub_sub_genlisp.dir/build
+.PHONY : pub_sub_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named pub_sub_genpy
+
+# Build rule for target.
+pub_sub_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pub_sub_genpy
+.PHONY : pub_sub_genpy
+
+# fast build rule for target.
+pub_sub_genpy/fast:
+	$(MAKE) -f pub_sub/CMakeFiles/pub_sub_genpy.dir/build.make pub_sub/CMakeFiles/pub_sub_genpy.dir/build
+.PHONY : pub_sub_genpy/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_cpp
@@ -377,12 +403,14 @@ help:
 	@echo "... tests"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... _pub_sub_generate_messages_check_deps_message"
+	@echo "... pub_sub_gencpp"
+	@echo "... pub_sub_generate_messages"
+	@echo "... pub_sub_generate_messages_cpp"
+	@echo "... pub_sub_generate_messages_lisp"
+	@echo "... pub_sub_generate_messages_py"
+	@echo "... pub_sub_genlisp"
+	@echo "... pub_sub_genpy"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"

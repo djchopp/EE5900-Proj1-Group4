@@ -3,6 +3,6 @@ prefix=/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/instal
 Name: pub_sub
 Description: Description of pub_sub
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install/lib 
-Requires: 
+Cflags: -I/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install/include
+Libs: -L/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install/lib -lpub_sub
+Requires: rospy std_msgs message_runtime

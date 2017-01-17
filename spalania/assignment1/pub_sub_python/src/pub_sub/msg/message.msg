@@ -1,3 +1,3 @@
-float temperature
-float wind
-float humidity
+float32 temperature
+float32 wind
+float32 humidity

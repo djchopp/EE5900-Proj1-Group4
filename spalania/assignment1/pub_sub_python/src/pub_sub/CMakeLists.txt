@@ -5,7 +5,6 @@ project(pub_sub)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
   rospy
   std_msgs
   message_generation
@@ -46,9 +45,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate messages in the 'msg' folder
 add_message_files(
-    FILES
+  FILES
 	message.msg
-#   Message2.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -103,7 +101,7 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES pub_sub
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
+  CATKIN_DEPENDS rospy std_msgs message_runtime
   DEPENDS system_lib
 )
 

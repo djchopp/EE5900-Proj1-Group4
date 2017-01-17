@@ -5,9 +5,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS
-  "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
-  "ROS_PACKAGE_NAME=\"pub_sub\""
   )
 
 # Targets to which this target links.
@@ -16,6 +14,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include"
   "/opt/ros/indigo/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
