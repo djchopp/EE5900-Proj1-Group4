@@ -16,7 +16,9 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/devel/include"
   "/opt/ros/indigo/include"
+  "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/src/beginner_tutorials/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

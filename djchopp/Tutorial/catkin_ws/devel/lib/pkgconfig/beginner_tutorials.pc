@@ -3,6 +3,6 @@ prefix=/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/dev
 Name: beginner_tutorials
 Description: Description of beginner_tutorials
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/devel/include
 Libs: -L/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/devel/lib 
-Requires: 
+Requires: message_runtime
