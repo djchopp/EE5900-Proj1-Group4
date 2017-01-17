@@ -14,34 +14,6 @@ import Tkinter as tk
 # api key from openweathermap website
 API_key = '29a84d545476863693ae58a97a49182b'
 
-# talker function is called at the beginning of the program
-def talker(zip_code, country):
-	# create a ros node with the topic information and the type of the message.
-	pub = rospy.Publisher('chatter', String, queue_size=10)
-	# initiate the node in the name of talker
-	rospy.init_node('talker', anonymous=True)
-
-	# rate at which the publisher publishes the weather info on the screen.
-	# 0.1 Hz ==> 1 message per ten second
-	rate = rospy.Rate(0.1)
-
-	# import the API key
-	owm = pyowm.OWM(API_key)
-
-	# basic while, which will run untill the publisher node is closed
-	loop = 0
-	while not rospy.is_shutdown():
-		# weather info about the specified place
-		observation = owm.weather_at_zip_code(zip_code, country)
-		w = observation.get_weather()
-		temperature = w.get_temperature('celsius')
-		
-		# message to publish
-		send_str = "Temperature: %f" % temperature['temp']
-		rospy.loginfo(send_str)
-		pub.publish(send_str)
-		rate.sleep()
-
 
 def gui_func():
 	top_layer = tk.Tk()
@@ -73,6 +45,38 @@ def gui_func():
 
 	quit_button = tk.Button(bottom_frame, text='Quit', command=top_layer.quit)
 	quit_button.pack(side=tk.RIGHT)
+
+
+	# talker function is called at the beginning of the program
+	def talker(zip_code, country):
+		# create a ros node with the topic information and the type of the message.
+		pub = rospy.Publisher('chatter', String, queue_size=10)
+		# initiate the node in the name of talker
+		rospy.init_node('talker', anonymous=True)
+
+		# rate at which the publisher publishes the weather info on the screen.
+		# 0.1 Hz ==> 1 message per ten second
+		rate = rospy.Rate(0.1)
+
+		# import the API key
+		owm = pyowm.OWM(API_key)
+
+		# basic while, which will run untill the publisher node is closed
+		loop = True
+		while loop:
+			# increment loop variable
+			def stop_loop():
+				loop = False
+			# weather info about the specified place
+			observation = owm.weather_at_zip_code(zip_code, country)
+			w = observation.get_weather()
+			temperature = w.get_temperature('celsius')
+		
+			# message to publish
+			send_str = "Temperature: %f" % temperature['temp']
+			rospy.loginfo(send_str)
+			pub.publish(send_str)
+			rate.sleep()
 
 	top_layer.mainloop()
 
