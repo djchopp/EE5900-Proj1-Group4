@@ -8,7 +8,7 @@ def callback(message):
 	print('The temperature: {} deg C').format(message.temperature)
 	print('The wind speed: {} km/s').format(message.wind)
 	print('The humidity: {}').format(message.humidity)
-
+	print('Staus: %s') % message.status
 def listener():
 	# initiate the listener node in the name of listener.
 	rospy.init_node('listener', anonymous=True)

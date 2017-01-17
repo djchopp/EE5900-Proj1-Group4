@@ -37,6 +37,7 @@ def talker():
 		win = w.get_wind()
 		weather.wind = win['speed']
 		weather.humidity = w.get_humidity()
+		weather.status = w.get_status()
 		
 		# message to publish
 		# send_str = "Temperature: %f" % temperature['temp']
