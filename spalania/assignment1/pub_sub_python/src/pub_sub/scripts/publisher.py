@@ -9,13 +9,13 @@ import pyowm
 # import GUI library
 import Tkinter as tk
 
-zip_code = '49931'
-country = 'us'
+# zip_code = '49931'
+# country = 'us'
 # api key from openweathermap website
 API_key = '29a84d545476863693ae58a97a49182b'
 
 # talker function is called at the beginning of the program
-def talker():
+def talker(zip_code, country):
 	# create a ros node with the topic information and the type of the message.
 	pub = rospy.Publisher('chatter', String, queue_size=10)
 	# initiate the node in the name of talker
@@ -46,7 +46,6 @@ def talker():
 def gui_func():
 	top_layer = tk.Tk()
 
-
 	top_frame = tk.Frame(top_layer)
 	top_frame.pack()
 
@@ -59,15 +58,21 @@ def gui_func():
 	label1 = tk.Label(top_frame, text='Enter the zip code: ')
 	label1.pack(side=tk.LEFT)
 	entry1 = tk.Entry(top_frame, bd=5)
+	entry1.insert(10, '49931')
 	entry1.pack(side=tk.RIGHT)
 
 	label2 = tk.Label(middle_frame, text='Enter the country intialis: ')
 	label2.pack(side=tk.LEFT)
 	entry2 = tk.Entry(middle_frame, bd=5)
+	entry2.insert(10, 'us')
 	entry2.pack(side=tk.RIGHT)
 
-	button = tk.Button(bottom_frame, text='query', command=talker)
-	button.pack()
+	query_button = tk.Button(bottom_frame, text='Query', 
+		           command=lambda: talker(entry1.get(), entry2.get()))
+	query_button.pack(side=tk.LEFT)
+
+	quit_button = tk.Button(bottom_frame, text='Quit', command=top_layer.quit)
+	quit_button.pack(side=tk.RIGHT)
 
 	top_layer.mainloop()
 
