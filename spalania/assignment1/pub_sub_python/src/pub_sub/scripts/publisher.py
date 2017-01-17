@@ -9,7 +9,8 @@ import pyowm
 # import GUI library
 import Tkinter as tk
 
-city = 'Chennai, in'
+zip_code = '49931'
+country = 'us'
 # api key from openweathermap website
 API_key = '29a84d545476863693ae58a97a49182b'
 
@@ -31,7 +32,7 @@ def talker():
 	loop = 0
 	while not rospy.is_shutdown():
 		# weather info about the specified place
-		observation = owm.weather_at_place(city)
+		observation = owm.weather_at_zip_code(zip_code, country)
 		w = observation.get_weather()
 		temperature = w.get_temperature('celsius')
 		
