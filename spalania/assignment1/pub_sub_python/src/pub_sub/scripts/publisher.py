@@ -12,7 +12,7 @@ import pyowm
 def talker():
 	# create a ros node with the topic information and the type of the message.	
 	
-	pub = rospy.Publisher('chatter', message)
+	pub = rospy.Publisher('chatter', message, queue_size=10)
 	# initiate the node in the name of talker
 	rospy.init_node('talker', anonymous=True)
 
