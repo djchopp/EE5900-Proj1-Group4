@@ -3,6 +3,8 @@
 import rospy
 import sys
 from std_msgs.msg import String
+
+# import the custom definied message
 from pub_sub.msg import message
 
 # import openweathermap library
@@ -11,7 +13,6 @@ import pyowm
 # talker function is called at the beginning of the program
 def talker():
 	# create a ros node with the topic information and the type of the message.	
-	
 	pub = rospy.Publisher('chatter', message, queue_size=10)
 	# initiate the node in the name of talker
 	rospy.init_node('talker', anonymous=True)
@@ -31,13 +32,16 @@ def talker():
 		# example: 'rosrun pub_sub publisher.py 49931 US'
 		observation = owm.weather_at_zip_code(sys.argv[1], sys.argv[2])
 		w = observation.get_weather()
+		# load all the parameters defined in the message.msg file
+		# (temperature, wind, humidity, status)
 		weather = message()
+		# convert temperature from kelvin to celsius
 		temper = w.get_temperature('celsius')
 		weather.temperature = temper['temp']
 		win = w.get_wind()
 		weather.wind = win['speed']
 		weather.humidity = w.get_humidity()
-		weather.status = w.get_status()
+		weather.status = w.get_detailed_status()
 		
 		# message to publish
 		# send_str = "Temperature: %f" % temperature['temp']
