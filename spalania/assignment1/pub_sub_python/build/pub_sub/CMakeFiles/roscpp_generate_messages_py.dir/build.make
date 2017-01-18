@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src
+CMAKE_SOURCE_DIR = /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build
+CMAKE_BINARY_DIR = /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build
 
 # Utility rule file for roscpp_generate_messages_py.
 
@@ -56,10 +56,10 @@ pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/build: roscpp_generate_messag
 .PHONY : pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/build
 
 pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	cd /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/depend:
-	cd /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : pub_sub/CMakeFiles/roscpp_generate_messages_py.dir/depend
 

@@ -1,8 +1,8 @@
-prefix=/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install
+prefix=/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install
 
 Name: pub_sub
 Description: Description of pub_sub
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install/lib 
+Libs: -L/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install/lib 
 Requires: 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub
+# Install script for directory: /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_sub.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_sub.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pub_sub/cmake" TYPE FILE FILES
-    "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_subConfig.cmake"
-    "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_subConfig-version.cmake"
+    "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_subConfig.cmake"
+    "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/pub_sub/catkin_generated/installspace/pub_subConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pub_sub" TYPE FILE FILES "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pub_sub" TYPE FILE FILES "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
