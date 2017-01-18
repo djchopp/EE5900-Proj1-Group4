@@ -1,0 +1,2 @@
+beginner_tutorials:weather
+-DCATKIN_DEVEL_PREFIX=/home/robotics1/EE5900/EE5900-Proj1-Group4/weather_python/devel -DCMAKE_INSTALL_PREFIX=/home/robotics1/EE5900/EE5900-Proj1-Group4/weather_python/install -G Unix Makefiles

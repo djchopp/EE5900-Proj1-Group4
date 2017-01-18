@@ -1,0 +1,8 @@
+prefix=/home/robotics1/EE5900/EE5900-Proj1-Group4/weather_python/install
+
+Name: weather
+Description: Description of weather
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robotics1/EE5900/EE5900-Proj1-Group4/weather_python/install/lib 
+Requires: 
