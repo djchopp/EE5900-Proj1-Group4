@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC    -shared -Wl,-soname,libsoapndfdXMLBindingProxy.so -o /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/libsoapndfdXMLBindingProxy.so CMakeFiles/soapndfdXMLBindingProxy.dir/src/soapndfdXMLBindingProxy.cpp.o 

@@ -81,7 +81,7 @@ weatherPub_EXTERNAL_OBJECTS =
 
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: weather_cpp/CMakeFiles/weatherPub.dir/src/weatherPub.cpp.o
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: weather_cpp/CMakeFiles/weatherPub.dir/build.make
-/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/libtinyxml2.so
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/libweatherParser.so
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /opt/ros/indigo/lib/libroscpp.so
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /usr/lib/i386-linux-gnu/libboost_signals.so
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /usr/lib/i386-linux-gnu/libboost_filesystem.so
@@ -99,6 +99,9 @@ weatherPub_EXTERNAL_OBJECTS =
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /usr/lib/i386-linux-gnu/libboost_thread.so
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /usr/lib/i386-linux-gnu/libpthread.so
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /usr/lib/i386-linux-gnu/libconsole_bridge.so
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/libsoapndfdXMLBindingProxy.so
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/libsoapC.so
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/libtinyxml2.so
 /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub: weather_cpp/CMakeFiles/weatherPub.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/weather_cpp/weatherPub"
 	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/weather_cpp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/weatherPub.dir/link.txt --verbose=$(VERBOSE)

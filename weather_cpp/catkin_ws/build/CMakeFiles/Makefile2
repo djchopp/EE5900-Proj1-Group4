@@ -289,7 +289,10 @@ clean: gtest/CMakeFiles/gtest_main.dir/clean
 # Directory level rules for directory weather_cpp
 
 # Convenience name for "all" pass in the directory.
+weather_cpp/all: weather_cpp/CMakeFiles/soapC.dir/all
+weather_cpp/all: weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/all
 weather_cpp/all: weather_cpp/CMakeFiles/tinyxml2.dir/all
+weather_cpp/all: weather_cpp/CMakeFiles/weatherParser.dir/all
 weather_cpp/all: weather_cpp/CMakeFiles/weatherPub.dir/all
 weather_cpp/all: weather_cpp/CMakeFiles/weatherSub.dir/all
 weather_cpp/all: weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/all
@@ -303,10 +306,13 @@ weather_cpp/clean: weather_cpp/CMakeFiles/roscpp_generate_messages_py.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+weather_cpp/clean: weather_cpp/CMakeFiles/soapC.dir/clean
+weather_cpp/clean: weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/tinyxml2.dir/clean
+weather_cpp/clean: weather_cpp/CMakeFiles/weatherParser.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/weatherPub.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/weatherSub.dir/clean
 weather_cpp/clean: weather_cpp/CMakeFiles/weather_cpp_gencpp.dir/clean
@@ -540,6 +546,76 @@ clean: weather_cpp/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target weather_cpp/CMakeFiles/soapC.dir
+
+# All Build rule for target.
+weather_cpp/CMakeFiles/soapC.dir/all:
+	$(MAKE) -f weather_cpp/CMakeFiles/soapC.dir/build.make weather_cpp/CMakeFiles/soapC.dir/depend
+	$(MAKE) -f weather_cpp/CMakeFiles/soapC.dir/build.make weather_cpp/CMakeFiles/soapC.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  3
+	@echo "Built target soapC"
+.PHONY : weather_cpp/CMakeFiles/soapC.dir/all
+
+# Include target in all.
+all: weather_cpp/CMakeFiles/soapC.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+weather_cpp/CMakeFiles/soapC.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 weather_cpp/CMakeFiles/soapC.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 0
+.PHONY : weather_cpp/CMakeFiles/soapC.dir/rule
+
+# Convenience name for target.
+soapC: weather_cpp/CMakeFiles/soapC.dir/rule
+.PHONY : soapC
+
+# clean rule for target.
+weather_cpp/CMakeFiles/soapC.dir/clean:
+	$(MAKE) -f weather_cpp/CMakeFiles/soapC.dir/build.make weather_cpp/CMakeFiles/soapC.dir/clean
+.PHONY : weather_cpp/CMakeFiles/soapC.dir/clean
+
+# clean rule for target.
+clean: weather_cpp/CMakeFiles/soapC.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir
+
+# All Build rule for target.
+weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/all:
+	$(MAKE) -f weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build.make weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/depend
+	$(MAKE) -f weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build.make weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  4
+	@echo "Built target soapndfdXMLBindingProxy"
+.PHONY : weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/all
+
+# Include target in all.
+all: weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 0
+.PHONY : weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/rule
+
+# Convenience name for target.
+soapndfdXMLBindingProxy: weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/rule
+.PHONY : soapndfdXMLBindingProxy
+
+# clean rule for target.
+weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/clean:
+	$(MAKE) -f weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build.make weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/clean
+.PHONY : weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/clean
+
+# clean rule for target.
+clean: weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target weather_cpp/CMakeFiles/std_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
@@ -639,7 +715,7 @@ clean: weather_cpp/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 weather_cpp/CMakeFiles/tinyxml2.dir/all:
 	$(MAKE) -f weather_cpp/CMakeFiles/tinyxml2.dir/build.make weather_cpp/CMakeFiles/tinyxml2.dir/depend
 	$(MAKE) -f weather_cpp/CMakeFiles/tinyxml2.dir/build.make weather_cpp/CMakeFiles/tinyxml2.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  5
 	@echo "Built target tinyxml2"
 .PHONY : weather_cpp/CMakeFiles/tinyxml2.dir/all
 
@@ -668,14 +744,54 @@ clean: weather_cpp/CMakeFiles/tinyxml2.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target weather_cpp/CMakeFiles/weatherParser.dir
+
+# All Build rule for target.
+weather_cpp/CMakeFiles/weatherParser.dir/all: weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/all
+weather_cpp/CMakeFiles/weatherParser.dir/all: weather_cpp/CMakeFiles/soapC.dir/all
+weather_cpp/CMakeFiles/weatherParser.dir/all: weather_cpp/CMakeFiles/tinyxml2.dir/all
+	$(MAKE) -f weather_cpp/CMakeFiles/weatherParser.dir/build.make weather_cpp/CMakeFiles/weatherParser.dir/depend
+	$(MAKE) -f weather_cpp/CMakeFiles/weatherParser.dir/build.make weather_cpp/CMakeFiles/weatherParser.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  6
+	@echo "Built target weatherParser"
+.PHONY : weather_cpp/CMakeFiles/weatherParser.dir/all
+
+# Include target in all.
+all: weather_cpp/CMakeFiles/weatherParser.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+weather_cpp/CMakeFiles/weatherParser.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 weather_cpp/CMakeFiles/weatherParser.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 0
+.PHONY : weather_cpp/CMakeFiles/weatherParser.dir/rule
+
+# Convenience name for target.
+weatherParser: weather_cpp/CMakeFiles/weatherParser.dir/rule
+.PHONY : weatherParser
+
+# clean rule for target.
+weather_cpp/CMakeFiles/weatherParser.dir/clean:
+	$(MAKE) -f weather_cpp/CMakeFiles/weatherParser.dir/build.make weather_cpp/CMakeFiles/weatherParser.dir/clean
+.PHONY : weather_cpp/CMakeFiles/weatherParser.dir/clean
+
+# clean rule for target.
+clean: weather_cpp/CMakeFiles/weatherParser.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target weather_cpp/CMakeFiles/weatherPub.dir
 
 # All Build rule for target.
+weather_cpp/CMakeFiles/weatherPub.dir/all: weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/all
 weather_cpp/CMakeFiles/weatherPub.dir/all: weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/all
+weather_cpp/CMakeFiles/weatherPub.dir/all: weather_cpp/CMakeFiles/soapC.dir/all
+weather_cpp/CMakeFiles/weatherPub.dir/all: weather_cpp/CMakeFiles/weatherParser.dir/all
 weather_cpp/CMakeFiles/weatherPub.dir/all: weather_cpp/CMakeFiles/tinyxml2.dir/all
 	$(MAKE) -f weather_cpp/CMakeFiles/weatherPub.dir/build.make weather_cpp/CMakeFiles/weatherPub.dir/depend
 	$(MAKE) -f weather_cpp/CMakeFiles/weatherPub.dir/build.make weather_cpp/CMakeFiles/weatherPub.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  7
 	@echo "Built target weatherPub"
 .PHONY : weather_cpp/CMakeFiles/weatherPub.dir/all
 
@@ -685,7 +801,7 @@ all: weather_cpp/CMakeFiles/weatherPub.dir/all
 
 # Build rule for subdir invocation for target.
 weather_cpp/CMakeFiles/weatherPub.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 weather_cpp/CMakeFiles/weatherPub.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles 0
 .PHONY : weather_cpp/CMakeFiles/weatherPub.dir/rule
@@ -710,7 +826,7 @@ clean: weather_cpp/CMakeFiles/weatherPub.dir/clean
 weather_cpp/CMakeFiles/weatherSub.dir/all: weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/all
 	$(MAKE) -f weather_cpp/CMakeFiles/weatherSub.dir/build.make weather_cpp/CMakeFiles/weatherSub.dir/depend
 	$(MAKE) -f weather_cpp/CMakeFiles/weatherSub.dir/build.make weather_cpp/CMakeFiles/weatherSub.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  8
 	@echo "Built target weatherSub"
 .PHONY : weather_cpp/CMakeFiles/weatherSub.dir/all
 
@@ -773,8 +889,8 @@ clean: weather_cpp/CMakeFiles/weather_cpp_gencpp.dir/clean
 # Target rules for target weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir
 
 # All Build rule for target.
-weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/all: weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/all
 weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/all: weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/all
+weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/all: weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/all
 weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/all: weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/all
 	$(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/build.make weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/depend
 	$(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/build.make weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/build
@@ -810,11 +926,11 @@ clean: weather_cpp/CMakeFiles/weather_cpp_generate_messages.dir/clean
 # Target rules for target weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir
 
 # All Build rule for target.
-weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/all: weather_cpp/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/all: weather_cpp/CMakeFiles/_weather_cpp_generate_messages_check_deps_CurrentCondition.dir/all
+weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/all: weather_cpp/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/build.make weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/depend
 	$(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/build.make weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  9
 	@echo "Built target weather_cpp_generate_messages_cpp"
 .PHONY : weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/all
 
@@ -842,11 +958,11 @@ clean: weather_cpp/CMakeFiles/weather_cpp_generate_messages_cpp.dir/clean
 # Target rules for target weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir
 
 # All Build rule for target.
-weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/all: weather_cpp/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/all: weather_cpp/CMakeFiles/_weather_cpp_generate_messages_check_deps_CurrentCondition.dir/all
+weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/all: weather_cpp/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/build.make weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/depend
 	$(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/build.make weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  10
 	@echo "Built target weather_cpp_generate_messages_lisp"
 .PHONY : weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/all
 
@@ -874,11 +990,11 @@ clean: weather_cpp/CMakeFiles/weather_cpp_generate_messages_lisp.dir/clean
 # Target rules for target weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir
 
 # All Build rule for target.
-weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/all: weather_cpp/CMakeFiles/std_msgs_generate_messages_py.dir/all
 weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/all: weather_cpp/CMakeFiles/_weather_cpp_generate_messages_check_deps_CurrentCondition.dir/all
+weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/all: weather_cpp/CMakeFiles/std_msgs_generate_messages_py.dir/all
 	$(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/build.make weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/depend
 	$(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/build.make weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  8 9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build/CMakeFiles  11 12
 	@echo "Built target weather_cpp_generate_messages_py"
 .PHONY : weather_cpp/CMakeFiles/weather_cpp_generate_messages_py.dir/all
 

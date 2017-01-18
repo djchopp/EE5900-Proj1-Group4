@@ -101,7 +101,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-# LIBRARIES libtinyxml2
+# LIBRARIES curl
   CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
 #  DEPENDS system_lib
 
@@ -192,7 +192,11 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(weatherPub src/weatherPub.cpp)
 add_library(tinyxml2 src/tinyxml2.cpp)
-target_link_libraries(weatherPub ${catkin_LIBRARIES})
+add_library(soapC src/soapC.cpp)
+add_library(soapndfdXMLBindingProxy src/soapndfdXMLBindingProxy.cpp)
+add_library(weatherParser src/weatherParser.cpp)
+target_link_libraries(weatherParser soapndfdXMLBindingProxy soapC gsoap++)
+target_link_libraries(weatherPub tinyxml2 weatherParser ${catkin_LIBRARIES})
 add_dependencies(weatherPub weather_cpp_generate_messages_cpp)
 
 add_executable(weatherSub src/weatherSub.cpp)

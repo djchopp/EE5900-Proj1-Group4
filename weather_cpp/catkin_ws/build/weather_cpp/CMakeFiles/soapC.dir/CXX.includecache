@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/soapH.h
+weather_cpp/soapStub.h
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/weather_cpp/soapStub.h
+
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/soapStub.h
+vector
+-
+stdsoap2.h
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/stdsoap2.h
+
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/src/soapC.cpp
+weather_cpp/soapH.h
+/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/src/weather_cpp/soapH.h
+

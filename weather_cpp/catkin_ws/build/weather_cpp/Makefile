@@ -248,6 +248,34 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+weather_cpp/CMakeFiles/soapC.dir/rule:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 weather_cpp/CMakeFiles/soapC.dir/rule
+.PHONY : weather_cpp/CMakeFiles/soapC.dir/rule
+
+# Convenience name for target.
+soapC: weather_cpp/CMakeFiles/soapC.dir/rule
+.PHONY : soapC
+
+# fast build rule for target.
+soapC/fast:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/soapC.dir/build.make weather_cpp/CMakeFiles/soapC.dir/build
+.PHONY : soapC/fast
+
+# Convenience name for target.
+weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/rule:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/rule
+.PHONY : weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/rule
+
+# Convenience name for target.
+soapndfdXMLBindingProxy: weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/rule
+.PHONY : soapndfdXMLBindingProxy
+
+# fast build rule for target.
+soapndfdXMLBindingProxy/fast:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build.make weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build
+.PHONY : soapndfdXMLBindingProxy/fast
+
+# Convenience name for target.
 weather_cpp/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
 	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 weather_cpp/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : weather_cpp/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
@@ -302,6 +330,20 @@ tinyxml2: weather_cpp/CMakeFiles/tinyxml2.dir/rule
 tinyxml2/fast:
 	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/tinyxml2.dir/build.make weather_cpp/CMakeFiles/tinyxml2.dir/build
 .PHONY : tinyxml2/fast
+
+# Convenience name for target.
+weather_cpp/CMakeFiles/weatherParser.dir/rule:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 weather_cpp/CMakeFiles/weatherParser.dir/rule
+.PHONY : weather_cpp/CMakeFiles/weatherParser.dir/rule
+
+# Convenience name for target.
+weatherParser: weather_cpp/CMakeFiles/weatherParser.dir/rule
+.PHONY : weatherParser
+
+# fast build rule for target.
+weatherParser/fast:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/weatherParser.dir/build.make weather_cpp/CMakeFiles/weatherParser.dir/build
+.PHONY : weatherParser/fast
 
 # Convenience name for target.
 weather_cpp/CMakeFiles/weatherPub.dir/rule:
@@ -429,6 +471,54 @@ weather_cpp_genpy/fast:
 	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/weather_cpp_genpy.dir/build.make weather_cpp/CMakeFiles/weather_cpp_genpy.dir/build
 .PHONY : weather_cpp_genpy/fast
 
+src/soapC.o: src/soapC.cpp.o
+.PHONY : src/soapC.o
+
+# target to build an object file
+src/soapC.cpp.o:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/soapC.dir/build.make weather_cpp/CMakeFiles/soapC.dir/src/soapC.cpp.o
+.PHONY : src/soapC.cpp.o
+
+src/soapC.i: src/soapC.cpp.i
+.PHONY : src/soapC.i
+
+# target to preprocess a source file
+src/soapC.cpp.i:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/soapC.dir/build.make weather_cpp/CMakeFiles/soapC.dir/src/soapC.cpp.i
+.PHONY : src/soapC.cpp.i
+
+src/soapC.s: src/soapC.cpp.s
+.PHONY : src/soapC.s
+
+# target to generate assembly for a file
+src/soapC.cpp.s:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/soapC.dir/build.make weather_cpp/CMakeFiles/soapC.dir/src/soapC.cpp.s
+.PHONY : src/soapC.cpp.s
+
+src/soapndfdXMLBindingProxy.o: src/soapndfdXMLBindingProxy.cpp.o
+.PHONY : src/soapndfdXMLBindingProxy.o
+
+# target to build an object file
+src/soapndfdXMLBindingProxy.cpp.o:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build.make weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/src/soapndfdXMLBindingProxy.cpp.o
+.PHONY : src/soapndfdXMLBindingProxy.cpp.o
+
+src/soapndfdXMLBindingProxy.i: src/soapndfdXMLBindingProxy.cpp.i
+.PHONY : src/soapndfdXMLBindingProxy.i
+
+# target to preprocess a source file
+src/soapndfdXMLBindingProxy.cpp.i:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build.make weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/src/soapndfdXMLBindingProxy.cpp.i
+.PHONY : src/soapndfdXMLBindingProxy.cpp.i
+
+src/soapndfdXMLBindingProxy.s: src/soapndfdXMLBindingProxy.cpp.s
+.PHONY : src/soapndfdXMLBindingProxy.s
+
+# target to generate assembly for a file
+src/soapndfdXMLBindingProxy.cpp.s:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build.make weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/src/soapndfdXMLBindingProxy.cpp.s
+.PHONY : src/soapndfdXMLBindingProxy.cpp.s
+
 src/tinyxml2.o: src/tinyxml2.cpp.o
 .PHONY : src/tinyxml2.o
 
@@ -452,6 +542,30 @@ src/tinyxml2.s: src/tinyxml2.cpp.s
 src/tinyxml2.cpp.s:
 	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/tinyxml2.dir/build.make weather_cpp/CMakeFiles/tinyxml2.dir/src/tinyxml2.cpp.s
 .PHONY : src/tinyxml2.cpp.s
+
+src/weatherParser.o: src/weatherParser.cpp.o
+.PHONY : src/weatherParser.o
+
+# target to build an object file
+src/weatherParser.cpp.o:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/weatherParser.dir/build.make weather_cpp/CMakeFiles/weatherParser.dir/src/weatherParser.cpp.o
+.PHONY : src/weatherParser.cpp.o
+
+src/weatherParser.i: src/weatherParser.cpp.i
+.PHONY : src/weatherParser.i
+
+# target to preprocess a source file
+src/weatherParser.cpp.i:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/weatherParser.dir/build.make weather_cpp/CMakeFiles/weatherParser.dir/src/weatherParser.cpp.i
+.PHONY : src/weatherParser.cpp.i
+
+src/weatherParser.s: src/weatherParser.cpp.s
+.PHONY : src/weatherParser.s
+
+# target to generate assembly for a file
+src/weatherParser.cpp.s:
+	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/build && $(MAKE) -f weather_cpp/CMakeFiles/weatherParser.dir/build.make weather_cpp/CMakeFiles/weatherParser.dir/src/weatherParser.cpp.s
+.PHONY : src/weatherParser.cpp.s
 
 src/weatherPub.o: src/weatherPub.cpp.o
 .PHONY : src/weatherPub.o
@@ -520,11 +634,14 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... soapC"
+	@echo "... soapndfdXMLBindingProxy"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... test"
 	@echo "... tinyxml2"
+	@echo "... weatherParser"
 	@echo "... weatherPub"
 	@echo "... weatherSub"
 	@echo "... weather_cpp_gencpp"
@@ -534,9 +651,18 @@ help:
 	@echo "... weather_cpp_generate_messages_py"
 	@echo "... weather_cpp_genlisp"
 	@echo "... weather_cpp_genpy"
+	@echo "... src/soapC.o"
+	@echo "... src/soapC.i"
+	@echo "... src/soapC.s"
+	@echo "... src/soapndfdXMLBindingProxy.o"
+	@echo "... src/soapndfdXMLBindingProxy.i"
+	@echo "... src/soapndfdXMLBindingProxy.s"
 	@echo "... src/tinyxml2.o"
 	@echo "... src/tinyxml2.i"
 	@echo "... src/tinyxml2.s"
+	@echo "... src/weatherParser.o"
+	@echo "... src/weatherParser.i"
+	@echo "... src/weatherParser.s"
 	@echo "... src/weatherPub.o"
 	@echo "... src/weatherPub.i"
 	@echo "... src/weatherPub.s"

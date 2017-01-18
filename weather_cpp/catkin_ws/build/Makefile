@@ -332,6 +332,32 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named soapC
+
+# Build rule for target.
+soapC: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 soapC
+.PHONY : soapC
+
+# fast build rule for target.
+soapC/fast:
+	$(MAKE) -f weather_cpp/CMakeFiles/soapC.dir/build.make weather_cpp/CMakeFiles/soapC.dir/build
+.PHONY : soapC/fast
+
+#=============================================================================
+# Target rules for targets named soapndfdXMLBindingProxy
+
+# Build rule for target.
+soapndfdXMLBindingProxy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 soapndfdXMLBindingProxy
+.PHONY : soapndfdXMLBindingProxy
+
+# fast build rule for target.
+soapndfdXMLBindingProxy/fast:
+	$(MAKE) -f weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build.make weather_cpp/CMakeFiles/soapndfdXMLBindingProxy.dir/build
+.PHONY : soapndfdXMLBindingProxy/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -382,6 +408,19 @@ tinyxml2: cmake_check_build_system
 tinyxml2/fast:
 	$(MAKE) -f weather_cpp/CMakeFiles/tinyxml2.dir/build.make weather_cpp/CMakeFiles/tinyxml2.dir/build
 .PHONY : tinyxml2/fast
+
+#=============================================================================
+# Target rules for targets named weatherParser
+
+# Build rule for target.
+weatherParser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 weatherParser
+.PHONY : weatherParser
+
+# fast build rule for target.
+weatherParser/fast:
+	$(MAKE) -f weather_cpp/CMakeFiles/weatherParser.dir/build.make weather_cpp/CMakeFiles/weatherParser.dir/build
+.PHONY : weatherParser/fast
 
 #=============================================================================
 # Target rules for targets named weatherPub
@@ -527,10 +566,13 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... soapC"
+	@echo "... soapndfdXMLBindingProxy"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... tinyxml2"
+	@echo "... weatherParser"
 	@echo "... weatherPub"
 	@echo "... weatherSub"
 	@echo "... weather_cpp_gencpp"

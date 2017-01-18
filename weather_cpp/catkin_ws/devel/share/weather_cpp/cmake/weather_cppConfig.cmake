@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib;/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib;/home/ros/EE5900_Repos/EE5900-Proj1-Group4/djchopp/Tutorial/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

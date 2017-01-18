@@ -1,24 +1,46 @@
+#include <iostream>
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "weather_cpp/CurrentCondition.h"
-#include "tinyxml2.h"
+#include "weather_cpp/weatherParser.h"
 
 #include <sstream>
 
-using namespace tinyxml2;
 
 /**
  * This tutorial demonstrates simple sending of messages over the ROS system.
  */
 int main(int argc, char **argv)
 {
+  switch(argc)
+  {
+    case 1:
+      std::cout <<
+    break;
+    
+    case 2:
+    
+    break;
+    
+    case 3:
+    
+    break;
+  }
+  
+
 
   float lat = 0.0;
   float lon = 0.0;
-
-  XMLDocument weatherXML;
   
-  weatherXML.LoadFile("/home/ros/MapClick.xml");
+  weatherParser weather;
+  
+  weather.setSourceZip("49331");
+  
+  weather.setSourceLatLon("47.1136","-88.5618");
+  
+  std::cout << "Done with XML" << std::endl;
+
+  return 0;
 
   ros::init(argc, argv, "weatherPub");
   

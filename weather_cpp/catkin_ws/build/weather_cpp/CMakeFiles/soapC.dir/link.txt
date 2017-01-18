@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC    -shared -Wl,-soname,libsoapC.so -o /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib/libsoapC.so CMakeFiles/soapC.dir/src/soapC.cpp.o 

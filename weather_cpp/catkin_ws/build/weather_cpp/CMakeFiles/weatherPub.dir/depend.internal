@@ -3,7 +3,12 @@
 
 weather_cpp/CMakeFiles/weatherPub.dir/src/weatherPub.cpp.o
  /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/include/weather_cpp/CurrentCondition.h
- /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/src/tinyxml2.h
+ /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/ndfdXMLBinding.nsmap
+ /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/soapH.h
+ /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/soapStub.h
+ /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/soapndfdXMLBindingProxy.h
+ /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/tinyxml2.h
+ /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include/weather_cpp/weatherParser.h
  /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/src/weatherPub.cpp
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
