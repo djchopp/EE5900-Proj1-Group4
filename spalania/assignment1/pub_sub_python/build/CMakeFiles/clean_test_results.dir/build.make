@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src
+CMAKE_SOURCE_DIR = /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build
+CMAKE_BINARY_DIR = /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build
 
 # Utility rule file for clean_test_results.
 
@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignmen
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python /opt/ros/indigo/share/catkin/cmake/test/remove_test_results.py /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/test_results
+	/usr/bin/python /opt/ros/indigo/share/catkin/cmake/test/remove_test_results.py /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -61,6 +61,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 
