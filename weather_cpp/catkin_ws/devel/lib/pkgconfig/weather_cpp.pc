@@ -1,0 +1,8 @@
+prefix=/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel
+
+Name: weather_cpp
+Description: Description of weather_cpp
+Version: 0.0.0
+Cflags: -I/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/include -I/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/src/weather_cpp/include
+Libs: -L/home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/devel/lib 
+Requires: roscpp rospy std_msgs message_runtime

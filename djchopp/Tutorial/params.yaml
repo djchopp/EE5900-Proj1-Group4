@@ -1,0 +1,12 @@
+background_b: 255
+background_g: 86
+background_r: 150
+rosdistro: 'indigo
+
+  '
+roslaunch:
+  uris: {host_ee5900_ros_vm__46371: 'http://EE5900-ROS-VM:46371/'}
+rosversion: '1.11.20
+
+  '
+run_id: 69ad178a-dc28-11e6-9e59-525400b3ba7e

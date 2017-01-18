@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ros/EE5900_Repos/EE5900-Proj1-Group4/weather_cpp/catkin_ws/install/setup.sh
