@@ -28,6 +28,7 @@ struct CurrentCondition_
     : header()
     , tempMax(0.0)
     , tempHourly(0.0)
+    , tempDew(0.0)
     , tempApparent(0.0)
     , rainfall(0.0)
     , icefall(0.0)
@@ -43,6 +44,7 @@ struct CurrentCondition_
     : header(_alloc)
     , tempMax(0.0)
     , tempHourly(0.0)
+    , tempDew(0.0)
     , tempApparent(0.0)
     , rainfall(0.0)
     , icefall(0.0)
@@ -66,6 +68,9 @@ struct CurrentCondition_
 
    typedef float _tempHourly_type;
   _tempHourly_type tempHourly;
+
+   typedef float _tempDew_type;
+  _tempDew_type tempDew;
 
    typedef float _tempApparent_type;
   _tempApparent_type tempApparent;
@@ -174,12 +179,12 @@ struct MD5Sum< ::weather_cpp::CurrentCondition_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "54daa0cddcc3580a66a58d3b3c94c3d1";
+    return "eeef136eba3229f200322aca790414d0";
   }
 
   static const char* value(const ::weather_cpp::CurrentCondition_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x54daa0cddcc3580aULL;
-  static const uint64_t static_value2 = 0x66a58d3b3c94c3d1ULL;
+  static const uint64_t static_value1 = 0xeeef136eba3229f2ULL;
+  static const uint64_t static_value2 = 0x00322aca790414d0ULL;
 };
 
 template<class ContainerAllocator>
@@ -201,6 +206,7 @@ struct Definition< ::weather_cpp::CurrentCondition_<ContainerAllocator> >
     return "Header header\n\
 float32 tempMax\n\
 float32 tempHourly\n\
+float32 tempDew\n\
 float32 tempApparent\n\
 float32 rainfall\n\
 float32 icefall\n\
@@ -250,6 +256,7 @@ namespace serialization
       stream.next(m.header);
       stream.next(m.tempMax);
       stream.next(m.tempHourly);
+      stream.next(m.tempDew);
       stream.next(m.tempApparent);
       stream.next(m.rainfall);
       stream.next(m.icefall);
@@ -285,6 +292,8 @@ struct Printer< ::weather_cpp::CurrentCondition_<ContainerAllocator> >
     Printer<float>::stream(s, indent + "  ", v.tempMax);
     s << indent << "tempHourly: ";
     Printer<float>::stream(s, indent + "  ", v.tempHourly);
+    s << indent << "tempDew: ";
+    Printer<float>::stream(s, indent + "  ", v.tempDew);
     s << indent << "tempApparent: ";
     Printer<float>::stream(s, indent + "  ", v.tempApparent);
     s << indent << "rainfall: ";

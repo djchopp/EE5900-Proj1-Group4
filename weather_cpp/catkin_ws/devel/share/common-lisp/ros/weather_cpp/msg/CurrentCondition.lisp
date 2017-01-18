@@ -22,6 +22,11 @@
     :initarg :tempHourly
     :type cl:float
     :initform 0.0)
+   (tempDew
+    :reader tempDew
+    :initarg :tempDew
+    :type cl:float
+    :initform 0.0)
    (tempApparent
     :reader tempApparent
     :initarg :tempApparent
@@ -97,6 +102,11 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:tempHourly-val is deprecated.  Use weather_cpp-msg:tempHourly instead.")
   (tempHourly m))
 
+(cl:ensure-generic-function 'tempDew-val :lambda-list '(m))
+(cl:defmethod tempDew-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:tempDew-val is deprecated.  Use weather_cpp-msg:tempDew instead.")
+  (tempDew m))
+
 (cl:ensure-generic-function 'tempApparent-val :lambda-list '(m))
 (cl:defmethod tempApparent-val ((m <CurrentCondition>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:tempApparent-val is deprecated.  Use weather_cpp-msg:tempApparent instead.")
@@ -155,6 +165,11 @@
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
   (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'tempHourly))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'tempDew))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -230,6 +245,12 @@
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'tempDew) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'tempApparent) (roslisp-utils:decode-single-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
@@ -295,19 +316,20 @@
   "weather_cpp/CurrentCondition")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<CurrentCondition>)))
   "Returns md5sum for a message object of type '<CurrentCondition>"
-  "54daa0cddcc3580a66a58d3b3c94c3d1")
+  "eeef136eba3229f200322aca790414d0")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'CurrentCondition)))
   "Returns md5sum for a message object of type 'CurrentCondition"
-  "54daa0cddcc3580a66a58d3b3c94c3d1")
+  "eeef136eba3229f200322aca790414d0")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CurrentCondition>)))
   "Returns full string definition for message of type '<CurrentCondition>"
-  (cl:format cl:nil "Header header~%float32 tempMax~%float32 tempHourly~%float32 tempApparent~%float32 rainfall~%float32 icefall~%float32 snowfall~%float32 probTornado~%float32 probHail~%float32 probThunderWind~%float32 probExTornado~%float32 probExHail~%float32 probExThunderWind~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%float32 tempMax~%float32 tempHourly~%float32 tempDew~%float32 tempApparent~%float32 rainfall~%float32 icefall~%float32 snowfall~%float32 probTornado~%float32 probHail~%float32 probThunderWind~%float32 probExTornado~%float32 probExHail~%float32 probExThunderWind~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CurrentCondition)))
   "Returns full string definition for message of type 'CurrentCondition"
-  (cl:format cl:nil "Header header~%float32 tempMax~%float32 tempHourly~%float32 tempApparent~%float32 rainfall~%float32 icefall~%float32 snowfall~%float32 probTornado~%float32 probHail~%float32 probThunderWind~%float32 probExTornado~%float32 probExHail~%float32 probExThunderWind~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%float32 tempMax~%float32 tempHourly~%float32 tempDew~%float32 tempApparent~%float32 rainfall~%float32 icefall~%float32 snowfall~%float32 probTornado~%float32 probHail~%float32 probThunderWind~%float32 probExTornado~%float32 probExHail~%float32 probExThunderWind~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CurrentCondition>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
+     4
      4
      4
      4
@@ -327,6 +349,7 @@
     (cl:cons ':header (header msg))
     (cl:cons ':tempMax (tempMax msg))
     (cl:cons ':tempHourly (tempHourly msg))
+    (cl:cons ':tempDew (tempDew msg))
     (cl:cons ':tempApparent (tempApparent msg))
     (cl:cons ':rainfall (rainfall msg))
     (cl:cons ':icefall (icefall msg))

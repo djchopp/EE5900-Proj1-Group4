@@ -1,6 +1,7 @@
 Header header
 float32 tempMax
 float32 tempHourly
+float32 tempDew
 float32 tempApparent
 float32 rainfall
 float32 icefall

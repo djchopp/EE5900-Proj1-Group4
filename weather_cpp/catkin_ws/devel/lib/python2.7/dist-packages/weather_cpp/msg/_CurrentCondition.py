@@ -8,12 +8,13 @@ import struct
 import std_msgs.msg
 
 class CurrentCondition(genpy.Message):
-  _md5sum = "54daa0cddcc3580a66a58d3b3c94c3d1"
+  _md5sum = "eeef136eba3229f200322aca790414d0"
   _type = "weather_cpp/CurrentCondition"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
 float32 tempMax
 float32 tempHourly
+float32 tempDew
 float32 tempApparent
 float32 rainfall
 float32 icefall
@@ -43,8 +44,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','tempMax','tempHourly','tempApparent','rainfall','icefall','snowfall','probTornado','probHail','probThunderWind','probExTornado','probExHail','probExThunderWind']
-  _slot_types = ['std_msgs/Header','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32']
+  __slots__ = ['header','tempMax','tempHourly','tempDew','tempApparent','rainfall','icefall','snowfall','probTornado','probHail','probThunderWind','probExTornado','probExHail','probExThunderWind']
+  _slot_types = ['std_msgs/Header','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -54,7 +55,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,tempMax,tempHourly,tempApparent,rainfall,icefall,snowfall,probTornado,probHail,probThunderWind,probExTornado,probExHail,probExThunderWind
+       header,tempMax,tempHourly,tempDew,tempApparent,rainfall,icefall,snowfall,probTornado,probHail,probThunderWind,probExTornado,probExHail,probExThunderWind
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -69,6 +70,8 @@ string frame_id
         self.tempMax = 0.
       if self.tempHourly is None:
         self.tempHourly = 0.
+      if self.tempDew is None:
+        self.tempDew = 0.
       if self.tempApparent is None:
         self.tempApparent = 0.
       if self.rainfall is None:
@@ -93,6 +96,7 @@ string frame_id
       self.header = std_msgs.msg.Header()
       self.tempMax = 0.
       self.tempHourly = 0.
+      self.tempDew = 0.
       self.tempApparent = 0.
       self.rainfall = 0.
       self.icefall = 0.
@@ -128,7 +132,7 @@ string frame_id
       else:
         buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_12f.pack(_x.tempMax, _x.tempHourly, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind))
+      buff.write(_struct_13f.pack(_x.tempMax, _x.tempHourly, _x.tempDew, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -156,8 +160,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 48
-      (_x.tempMax, _x.tempHourly, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind,) = _struct_12f.unpack(str[start:end])
+      end += 52
+      (_x.tempMax, _x.tempHourly, _x.tempDew, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind,) = _struct_13f.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -182,7 +186,7 @@ string frame_id
       else:
         buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_12f.pack(_x.tempMax, _x.tempHourly, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind))
+      buff.write(_struct_13f.pack(_x.tempMax, _x.tempHourly, _x.tempDew, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -211,12 +215,12 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 48
-      (_x.tempMax, _x.tempHourly, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind,) = _struct_12f.unpack(str[start:end])
+      end += 52
+      (_x.tempMax, _x.tempHourly, _x.tempDew, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind,) = _struct_13f.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
 _struct_3I = struct.Struct("<3I")
-_struct_12f = struct.Struct("<12f")
+_struct_13f = struct.Struct("<13f")

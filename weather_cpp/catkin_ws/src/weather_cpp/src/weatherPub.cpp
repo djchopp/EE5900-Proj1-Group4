@@ -17,6 +17,7 @@ int main(int argc, char **argv)
   std::string zipcode;
   std::string newZip;
 
+  // Handle the command arguments in a somewhat sane manner
   switch(argc)
   {
     case 1:
@@ -58,6 +59,8 @@ int main(int argc, char **argv)
   
   weatherParser weather;
   
+  
+  // Select the mode to work in.
   if(gpsMode)
   {
     weather.setSourceLatLon("47.1136","-88.5618");
@@ -69,6 +72,8 @@ int main(int argc, char **argv)
   
   weather.print();
 
+  // Initialize ROS sepecific stuff
+
   ros::init(argc, argv, "weatherPub");
   
   ros::NodeHandle n;
@@ -79,32 +84,18 @@ int main(int argc, char **argv)
 
   ros::Rate loop_rate(0.5);
 
-  /**
-   * A count of how many messages we have sent. This is used to create
-   * a unique string for each message.
-   */
   while (ros::ok())
   {
-  
-
-  
-  
-    /**
-     * This is a message object. You stuff it with data, and then publish it.
-     */
+    // Message to be sent
     weather_cpp::CurrentCondition msg;
-
-    //std::stringstream ss;
-    //ss << "hello world " << count;
-    //msg.data = ss.str();
     
-    
+    // Build the message with the last data
     msg.header.stamp = ros::Time::now();
     msg.header.frame_id = "/weather";
     
-    
     msg.tempMax = std::atof(weather.currentWeather.tempMax.c_str());
     msg.tempHourly = std::atof(weather.currentWeather.tempHourly.c_str());
+    msg.tempDew = std::atof(weather.currentWeather.tempDew.c_str());
     msg.tempApparent = std::atof(weather.currentWeather.tempApparent.c_str());
     msg.rainfall = std::atof(weather.currentWeather.rainfall.c_str());
     msg.icefall = std::atof(weather.currentWeather.icefall.c_str());
@@ -120,27 +111,33 @@ int main(int argc, char **argv)
     //ROS_INFO("%s", msg.data.c_str());
 
     weather_pub.publish(msg);
-    
 
     ros::spinOnce();
 
     loop_rate.sleep();
     
-    //Check if zip has been changed
-    n.getParam("/weather_zip", newZip);
-    
-    std::cout << newZip << std::endl;
-  
-    if(newZip != zipcode)
+    // Decide how to update the weather parser
+    if(gpsMode)
     {
-      zipcode = newZip;
-      weather.setSourceZip(zipcode);
+    
     }
     else
     {
-      weather.weatherUpdate();
+      // Check if zip has been changed, update the weather handler if it has changed.
+      n.getParam("/weather_zip", newZip);
+    
+      if(newZip != zipcode)
+      {
+        zipcode = newZip;
+        weather.setSourceZip(zipcode);
+      }
+      else
+      {
+        weather.weatherUpdate();
+      }
     }
     
+    // Print human readable weather data on publisher
     weather.print();
   }
 

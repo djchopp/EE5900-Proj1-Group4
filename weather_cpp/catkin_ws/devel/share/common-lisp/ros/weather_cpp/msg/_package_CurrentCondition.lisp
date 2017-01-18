@@ -5,6 +5,8 @@
           TEMPMAX
           TEMPHOURLY-VAL
           TEMPHOURLY
+          TEMPDEW-VAL
+          TEMPDEW
           TEMPAPPARENT-VAL
           TEMPAPPARENT
           RAINFALL-VAL
