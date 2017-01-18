@@ -29,24 +29,24 @@ def gui_function(message):
 
 	if temp <= 0:
 		# snow
-		photo = tk.PhotoImage(file='/home/mano/img/snow.gif')
+		photo = tk.PhotoImage(file='/img/snow.gif')
 		msg = 'Stay warm!'
 	elif temp > 25:
 		# hot
-		photo = tk.PhotoImage(file='/home/mano/img/sunny.gif')
+		photo = tk.PhotoImage(file='/img/sunny.gif')
 		msg = 'Got your sun screen lotion?'
 	else:
 		if 'rain' in status:
 			# rainy
-			photo = tk.PhotoImage(file='/home/mano/img/rain.gif')
+			photo = tk.PhotoImage(file='/img/rain.gif')
 			msg = 'I may try swimming!'
 		elif 'clear' in status:
 			# clear weather
-			photo = tk.PhotoImage(file='/home/mano/img/clear.gif')
+			photo = tk.PhotoImage(file='/img/clear.gif')
 			msg = 'Enjoy the sky!'
 		else:
 			# mild cloudy
-			photo = tk.PhotoImage(file='/home/mano/img/cloud.gif') 
+			photo = tk.PhotoImage(file='/img/cloud.gif') 
 			msg = 'You might need a umbrella!'
 
 
