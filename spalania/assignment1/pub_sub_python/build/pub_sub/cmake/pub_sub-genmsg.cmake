@@ -2,7 +2,7 @@
 
 message(STATUS "pub_sub: 1 messages, 0 services")
 
-set(MSG_I_FLAGS "-Ipub_sub:/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ipub_sub:/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -15,9 +15,9 @@ add_custom_target(pub_sub_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" NAME_WE)
 add_custom_target(_pub_sub_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pub_sub" "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pub_sub" "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" ""
 )
 
 #
@@ -27,7 +27,7 @@ add_custom_target(_pub_sub_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(pub_sub
-  "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg"
+  "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pub_sub
@@ -47,7 +47,7 @@ add_custom_target(pub_sub_generate_messages_cpp
 add_dependencies(pub_sub_generate_messages pub_sub_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" NAME_WE)
 add_dependencies(pub_sub_generate_messages_cpp _pub_sub_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -60,7 +60,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pub_sub_generate_messages_cpp)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(pub_sub
-  "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg"
+  "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pub_sub
@@ -80,7 +80,7 @@ add_custom_target(pub_sub_generate_messages_lisp
 add_dependencies(pub_sub_generate_messages pub_sub_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" NAME_WE)
 add_dependencies(pub_sub_generate_messages_lisp _pub_sub_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -93,7 +93,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS pub_sub_generate_messages_lisp)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(pub_sub
-  "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg"
+  "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pub_sub
@@ -113,7 +113,7 @@ add_custom_target(pub_sub_generate_messages_py
 add_dependencies(pub_sub_generate_messages pub_sub_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/msg/message.msg" NAME_WE)
 add_dependencies(pub_sub_generate_messages_py _pub_sub_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

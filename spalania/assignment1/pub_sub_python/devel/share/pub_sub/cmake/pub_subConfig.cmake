@@ -67,14 +67,14 @@ set(pub_sub_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(pub_sub_SOURCE_PREFIX /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub)
-  set(pub_sub_DEVEL_PREFIX /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel)
+  set(pub_sub_SOURCE_PREFIX /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub)
+  set(pub_sub_DEVEL_PREFIX /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel)
   set(pub_sub_INSTALL_PREFIX "")
   set(pub_sub_PREFIX ${pub_sub_DEVEL_PREFIX})
 else()
   set(pub_sub_SOURCE_PREFIX "")
   set(pub_sub_DEVEL_PREFIX "")
-  set(pub_sub_INSTALL_PREFIX /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install)
+  set(pub_sub_INSTALL_PREFIX /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/install)
   set(pub_sub_PREFIX ${pub_sub_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(pub_sub_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include;/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/include " STREQUAL " ")
+if(NOT "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include;/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/include " STREQUAL " ")
   set(pub_sub_INCLUDE_DIRS "")
-  set(_include_dirs "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include;/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/include")
+  set(_include_dirs "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include;/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel
         message(FATAL_ERROR "Project 'pub_sub' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'mano <mano@todo.todo>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'pub_sub' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/${idir}'.  Ask the maintainer 'mano <mano@todo.todo>' to fix it.")
+      message(FATAL_ERROR "Project 'pub_sub' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/src/pub_sub/${idir}'.  Ask the maintainer 'mano <mano@todo.todo>' to fix it.")
     endif()
     _list_append_unique(pub_sub_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/lib;/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

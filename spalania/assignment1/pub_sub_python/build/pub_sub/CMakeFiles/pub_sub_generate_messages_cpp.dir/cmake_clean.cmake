@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/pub_sub_generate_messages_cpp"
-  "/home/mano/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include/pub_sub/message.h"
+  "/home/ros/EE5900_Repos/EE5900-Proj1-Group4/spalania/assignment1/pub_sub_python/devel/include/pub_sub/message.h"
 )
 
 # Per-language clean rules from dependency scanning.
