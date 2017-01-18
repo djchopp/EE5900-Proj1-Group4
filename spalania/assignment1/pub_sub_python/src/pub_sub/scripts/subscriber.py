@@ -15,11 +15,11 @@ def gui_function(message):
 	root = tk.Tk()
 	root.wm_title("Hello there!")
 
-	top_frame = tk.Frame(root)
-	top_frame.pack()
+	#top_frame = tk.Frame(root)
+	#top_frame.pack()
 
-	temperature = tk.Label(top_frame, text='Temperature: '+str(temp)+' C', font=(None, 15))
-	temperature.pack()
+	#temperature = tk.Label(top_frame, text='Temperature: '+str(temp)+' C', font=(None, 15))
+	#temperature.pack()
 
 	middle_frame = tk.Frame(root)
 	middle_frame.pack()
