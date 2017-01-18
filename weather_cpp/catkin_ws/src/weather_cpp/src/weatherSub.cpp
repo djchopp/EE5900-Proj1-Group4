@@ -7,7 +7,7 @@
  */
 void weatherCallback(const  weather_cpp::CurrentCondition::ConstPtr& msg)
 {
-  ROS_INFO("I heard: [%s]", msg->temperature.c_str());
+  //ROS_INFO("I heard: [%s]", msg->temperature.c_str());
 }
 
 int main(int argc, char **argv)

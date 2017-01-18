@@ -8,17 +8,22 @@ import struct
 import std_msgs.msg
 
 class CurrentCondition(genpy.Message):
-  _md5sum = "26bdc8d77dad89eb3673a16e5de86c17"
+  _md5sum = "54daa0cddcc3580a66a58d3b3c94c3d1"
   _type = "weather_cpp/CurrentCondition"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
-string temperature
-string humidity
-string windSpeed
-string dewpoint
-string visibility
-string windchill
-string lastUpdate
+float32 tempMax
+float32 tempHourly
+float32 tempApparent
+float32 rainfall
+float32 icefall
+float32 snowfall
+float32 probTornado
+float32 probHail
+float32 probThunderWind
+float32 probExTornado
+float32 probExHail
+float32 probExThunderWind
 
 ================================================================================
 MSG: std_msgs/Header
@@ -38,8 +43,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','temperature','humidity','windSpeed','dewpoint','visibility','windchill','lastUpdate']
-  _slot_types = ['std_msgs/Header','string','string','string','string','string','string','string']
+  __slots__ = ['header','tempMax','tempHourly','tempApparent','rainfall','icefall','snowfall','probTornado','probHail','probThunderWind','probExTornado','probExHail','probExThunderWind']
+  _slot_types = ['std_msgs/Header','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -49,7 +54,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,temperature,humidity,windSpeed,dewpoint,visibility,windchill,lastUpdate
+       header,tempMax,tempHourly,tempApparent,rainfall,icefall,snowfall,probTornado,probHail,probThunderWind,probExTornado,probExHail,probExThunderWind
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -60,29 +65,44 @@ string frame_id
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
-      if self.temperature is None:
-        self.temperature = ''
-      if self.humidity is None:
-        self.humidity = ''
-      if self.windSpeed is None:
-        self.windSpeed = ''
-      if self.dewpoint is None:
-        self.dewpoint = ''
-      if self.visibility is None:
-        self.visibility = ''
-      if self.windchill is None:
-        self.windchill = ''
-      if self.lastUpdate is None:
-        self.lastUpdate = ''
+      if self.tempMax is None:
+        self.tempMax = 0.
+      if self.tempHourly is None:
+        self.tempHourly = 0.
+      if self.tempApparent is None:
+        self.tempApparent = 0.
+      if self.rainfall is None:
+        self.rainfall = 0.
+      if self.icefall is None:
+        self.icefall = 0.
+      if self.snowfall is None:
+        self.snowfall = 0.
+      if self.probTornado is None:
+        self.probTornado = 0.
+      if self.probHail is None:
+        self.probHail = 0.
+      if self.probThunderWind is None:
+        self.probThunderWind = 0.
+      if self.probExTornado is None:
+        self.probExTornado = 0.
+      if self.probExHail is None:
+        self.probExHail = 0.
+      if self.probExThunderWind is None:
+        self.probExThunderWind = 0.
     else:
       self.header = std_msgs.msg.Header()
-      self.temperature = ''
-      self.humidity = ''
-      self.windSpeed = ''
-      self.dewpoint = ''
-      self.visibility = ''
-      self.windchill = ''
-      self.lastUpdate = ''
+      self.tempMax = 0.
+      self.tempHourly = 0.
+      self.tempApparent = 0.
+      self.rainfall = 0.
+      self.icefall = 0.
+      self.snowfall = 0.
+      self.probTornado = 0.
+      self.probHail = 0.
+      self.probThunderWind = 0.
+      self.probExTornado = 0.
+      self.probExHail = 0.
+      self.probExThunderWind = 0.
 
   def _get_types(self):
     """
@@ -107,69 +127,8 @@ string frame_id
         buff.write(struct.pack('<I%sB'%length, length, *_x))
       else:
         buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.temperature
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.humidity
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.windSpeed
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.dewpoint
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.visibility
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.windchill
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.lastUpdate
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      _x = self
+      buff.write(_struct_12f.pack(_x.tempMax, _x.tempHourly, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -195,69 +154,10 @@ string frame_id
         self.header.frame_id = str[start:end].decode('utf-8')
       else:
         self.header.frame_id = str[start:end]
+      _x = self
       start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.temperature = str[start:end].decode('utf-8')
-      else:
-        self.temperature = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.humidity = str[start:end].decode('utf-8')
-      else:
-        self.humidity = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.windSpeed = str[start:end].decode('utf-8')
-      else:
-        self.windSpeed = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.dewpoint = str[start:end].decode('utf-8')
-      else:
-        self.dewpoint = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.visibility = str[start:end].decode('utf-8')
-      else:
-        self.visibility = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.windchill = str[start:end].decode('utf-8')
-      else:
-        self.windchill = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.lastUpdate = str[start:end].decode('utf-8')
-      else:
-        self.lastUpdate = str[start:end]
+      end += 48
+      (_x.tempMax, _x.tempHourly, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind,) = _struct_12f.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -281,69 +181,8 @@ string frame_id
         buff.write(struct.pack('<I%sB'%length, length, *_x))
       else:
         buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.temperature
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.humidity
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.windSpeed
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.dewpoint
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.visibility
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.windchill
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      _x = self.lastUpdate
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
-        length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      _x = self
+      buff.write(_struct_12f.pack(_x.tempMax, _x.tempHourly, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -370,72 +209,14 @@ string frame_id
         self.header.frame_id = str[start:end].decode('utf-8')
       else:
         self.header.frame_id = str[start:end]
+      _x = self
       start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.temperature = str[start:end].decode('utf-8')
-      else:
-        self.temperature = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.humidity = str[start:end].decode('utf-8')
-      else:
-        self.humidity = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.windSpeed = str[start:end].decode('utf-8')
-      else:
-        self.windSpeed = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.dewpoint = str[start:end].decode('utf-8')
-      else:
-        self.dewpoint = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.visibility = str[start:end].decode('utf-8')
-      else:
-        self.visibility = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.windchill = str[start:end].decode('utf-8')
-      else:
-        self.windchill = str[start:end]
-      start = end
-      end += 4
-      (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.lastUpdate = str[start:end].decode('utf-8')
-      else:
-        self.lastUpdate = str[start:end]
+      end += 48
+      (_x.tempMax, _x.tempHourly, _x.tempApparent, _x.rainfall, _x.icefall, _x.snowfall, _x.probTornado, _x.probHail, _x.probThunderWind, _x.probExTornado, _x.probExHail, _x.probExThunderWind,) = _struct_12f.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
 _struct_3I = struct.Struct("<3I")
+_struct_12f = struct.Struct("<12f")

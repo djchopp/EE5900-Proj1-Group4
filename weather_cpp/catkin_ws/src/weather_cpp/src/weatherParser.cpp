@@ -47,7 +47,6 @@ void weatherParser::weatherUpdate()
 
   weatherProxy.NDFDgenLatLonList(latlon, weatherProduct, start, end, weatherUnit, &weatherParameters, weatherDWML);
   parseDWML();
-  print();
 }
 
 void weatherParser::parseDWML()

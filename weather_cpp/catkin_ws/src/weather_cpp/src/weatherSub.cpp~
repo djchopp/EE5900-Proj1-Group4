@@ -5,7 +5,7 @@
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
  */
-void weatherCallback(const std_msgs::String::ConstPtr& msg)
+void weatherCallback(const  weather_cpp::CurrentCondition::ConstPtr& msg)
 {
   ROS_INFO("I heard: [%s]", msg->temperature.c_str());
 }

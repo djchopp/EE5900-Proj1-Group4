@@ -1,0 +1,13 @@
+Header header
+string tempMax
+string tempHourly
+string tempApparent
+string rainfall
+string icefall
+string snowfall
+string probTornado
+string probHail
+string probThunderWind
+string probExTornado
+string probExHail
+string probExThunderWind

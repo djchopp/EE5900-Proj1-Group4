@@ -12,61 +12,83 @@
  */
 int main(int argc, char **argv)
 {
-  float lat = 0.0;
-  float lon = 0.0;
+  bool gpsMode = false;
+  std::string argType;
+  std::string zipcode;
+  std::string newZip;
+
+  switch(argc)
+  {
+    case 1:
+      zipcode = "49931";
+      std::cout << "Using default location " << zipcode << std::endl;
+    break;
+    
+    case 2:
+      argType = argv[1];
+      if(argType == "gps")
+      {
+        gpsMode = true;
+        std::cout << "Weather will use GPS location" <<  std::endl;
+      }
+      else
+      {
+        std::cout << "Bad Command!!!" << std::endl;
+      }
+    break;
+    
+    case 3:
+      argType = argv[1];
+      if(argType == "zip")
+      {
+        zipcode = argv[2];
+        std::cout << "Using zip code " << zipcode <<  std::endl;
+      }
+      else
+      {
+        std::cout << "Bad Command!!!" << std::endl;
+      }
+    break;
+    
+    default:
+       std::cout << "Too many arguments!!!" << std::endl;
+       return -1;
+    break;
+  }
   
   weatherParser weather;
   
-  weather.setSourceZip("49331");
+  if(gpsMode)
+  {
+    weather.setSourceLatLon("47.1136","-88.5618");
+  }
+  else
+  {
+    weather.setSourceZip(zipcode);
+  }
   
-  weather.setSourceLatLon("47.1136","-88.5618");
-  
-  std::cout << "Done with XML" << std::endl;
-
-  return 0;
+  weather.print();
 
   ros::init(argc, argv, "weatherPub");
   
   ros::NodeHandle n;
   
-  /**
-   * Check if the latitude is already defined. If so, read it. If not, create and set default.
-   */
-  if(n.hasParam("weather_lat"))
-  {
-    n.getParam("weather_lat", lat);
-  }
-  else
-  {
-    n.setParam("weather_lat", lat);
-  }
-  
-  /**
-   * Check if the longitude is already defined. If so, read it. If not, create and set default.
-   */
-  if(n.hasParam("weather_lon"))
-  {
-    n.getParam("weather_lon", lon);
-  }
-  else
-  {
-    n.setParam("weather_lon", lon);
-  }
-  
+  n.setParam("weather_zip", zipcode);
 
   ros::Publisher weather_pub = n.advertise<weather_cpp::CurrentCondition>("CurrentWeather", 1000);
 
-  //ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-
-  ros::Rate loop_rate(1);
+  ros::Rate loop_rate(0.5);
 
   /**
    * A count of how many messages we have sent. This is used to create
    * a unique string for each message.
    */
-  int count = 0;
   while (ros::ok())
   {
+  
+
+  
+  
     /**
      * This is a message object. You stuff it with data, and then publish it.
      */
@@ -80,31 +102,46 @@ int main(int argc, char **argv)
     msg.header.stamp = ros::Time::now();
     msg.header.frame_id = "/weather";
     
-    msg.temperature = "70F";
-    msg.humidity = "70%";
-    msg.windSpeed = "30mph";
-    msg.dewpoint = "55F";
-    msg.visibility = "1mi";
-    msg.windchill = "22F";
-    msg.lastUpdate = "Now";
+    
+    msg.tempMax = std::atof(weather.currentWeather.tempMax.c_str());
+    msg.tempHourly = std::atof(weather.currentWeather.tempHourly.c_str());
+    msg.tempApparent = std::atof(weather.currentWeather.tempApparent.c_str());
+    msg.rainfall = std::atof(weather.currentWeather.rainfall.c_str());
+    msg.icefall = std::atof(weather.currentWeather.icefall.c_str());
+    msg.snowfall = std::atof(weather.currentWeather.snowfall.c_str());
+    msg.probTornado = std::atof(weather.currentWeather.probTornado.c_str());
+    msg.probHail = std::atof(weather.currentWeather.probHail.c_str());
+    msg.probThunderWind = std::atof(weather.currentWeather.probThunderWind.c_str());
+    msg.probExTornado = std::atof(weather.currentWeather.probExTornado.c_str());
+    msg.probExHail = std::atof(weather.currentWeather.probExHail.c_str());
+    msg.probExThunderWind = std::atof(weather.currentWeather.probExThunderWind.c_str());
     
 
     //ROS_INFO("%s", msg.data.c_str());
 
-    /**
-     * The publish() function is how you send messages. The parameter
-     * is the message object. The type of this object must agree with the type
-     * given as a template parameter to the advertise<>() call, as was done
-     * in the constructor above.
-     */
     weather_pub.publish(msg);
-    //chatter_pub.publish(msg);
     
 
     ros::spinOnce();
 
     loop_rate.sleep();
-    ++count;
+    
+    //Check if zip has been changed
+    n.getParam("weather_zip", newZip);
+    
+    std::cout << newZip << std::endl;
+  
+    if(newZip != zipcode)
+    {
+      zipcode = newZip;
+      weather.setSourceZip(zipcode);
+    }
+    else
+    {
+      weather.weatherUpdate();
+    }
+    
+    weather.print();
   }
 
 

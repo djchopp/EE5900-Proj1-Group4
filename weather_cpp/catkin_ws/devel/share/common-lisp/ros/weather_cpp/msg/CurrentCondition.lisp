@@ -12,41 +12,66 @@
     :initarg :header
     :type std_msgs-msg:Header
     :initform (cl:make-instance 'std_msgs-msg:Header))
-   (temperature
-    :reader temperature
-    :initarg :temperature
-    :type cl:string
-    :initform "")
-   (humidity
-    :reader humidity
-    :initarg :humidity
-    :type cl:string
-    :initform "")
-   (windSpeed
-    :reader windSpeed
-    :initarg :windSpeed
-    :type cl:string
-    :initform "")
-   (dewpoint
-    :reader dewpoint
-    :initarg :dewpoint
-    :type cl:string
-    :initform "")
-   (visibility
-    :reader visibility
-    :initarg :visibility
-    :type cl:string
-    :initform "")
-   (windchill
-    :reader windchill
-    :initarg :windchill
-    :type cl:string
-    :initform "")
-   (lastUpdate
-    :reader lastUpdate
-    :initarg :lastUpdate
-    :type cl:string
-    :initform ""))
+   (tempMax
+    :reader tempMax
+    :initarg :tempMax
+    :type cl:float
+    :initform 0.0)
+   (tempHourly
+    :reader tempHourly
+    :initarg :tempHourly
+    :type cl:float
+    :initform 0.0)
+   (tempApparent
+    :reader tempApparent
+    :initarg :tempApparent
+    :type cl:float
+    :initform 0.0)
+   (rainfall
+    :reader rainfall
+    :initarg :rainfall
+    :type cl:float
+    :initform 0.0)
+   (icefall
+    :reader icefall
+    :initarg :icefall
+    :type cl:float
+    :initform 0.0)
+   (snowfall
+    :reader snowfall
+    :initarg :snowfall
+    :type cl:float
+    :initform 0.0)
+   (probTornado
+    :reader probTornado
+    :initarg :probTornado
+    :type cl:float
+    :initform 0.0)
+   (probHail
+    :reader probHail
+    :initarg :probHail
+    :type cl:float
+    :initform 0.0)
+   (probThunderWind
+    :reader probThunderWind
+    :initarg :probThunderWind
+    :type cl:float
+    :initform 0.0)
+   (probExTornado
+    :reader probExTornado
+    :initarg :probExTornado
+    :type cl:float
+    :initform 0.0)
+   (probExHail
+    :reader probExHail
+    :initarg :probExHail
+    :type cl:float
+    :initform 0.0)
+   (probExThunderWind
+    :reader probExThunderWind
+    :initarg :probExThunderWind
+    :type cl:float
+    :initform 0.0))
 )
 
 (cl:defclass CurrentCondition (<CurrentCondition>)
@@ -62,145 +87,204 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:header-val is deprecated.  Use weather_cpp-msg:header instead.")
   (header m))
 
-(cl:ensure-generic-function 'temperature-val :lambda-list '(m))
-(cl:defmethod temperature-val ((m <CurrentCondition>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:temperature-val is deprecated.  Use weather_cpp-msg:temperature instead.")
-  (temperature m))
+(cl:ensure-generic-function 'tempMax-val :lambda-list '(m))
+(cl:defmethod tempMax-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:tempMax-val is deprecated.  Use weather_cpp-msg:tempMax instead.")
+  (tempMax m))
 
-(cl:ensure-generic-function 'humidity-val :lambda-list '(m))
-(cl:defmethod humidity-val ((m <CurrentCondition>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:humidity-val is deprecated.  Use weather_cpp-msg:humidity instead.")
-  (humidity m))
+(cl:ensure-generic-function 'tempHourly-val :lambda-list '(m))
+(cl:defmethod tempHourly-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:tempHourly-val is deprecated.  Use weather_cpp-msg:tempHourly instead.")
+  (tempHourly m))
 
-(cl:ensure-generic-function 'windSpeed-val :lambda-list '(m))
-(cl:defmethod windSpeed-val ((m <CurrentCondition>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:windSpeed-val is deprecated.  Use weather_cpp-msg:windSpeed instead.")
-  (windSpeed m))
+(cl:ensure-generic-function 'tempApparent-val :lambda-list '(m))
+(cl:defmethod tempApparent-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:tempApparent-val is deprecated.  Use weather_cpp-msg:tempApparent instead.")
+  (tempApparent m))
 
-(cl:ensure-generic-function 'dewpoint-val :lambda-list '(m))
-(cl:defmethod dewpoint-val ((m <CurrentCondition>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:dewpoint-val is deprecated.  Use weather_cpp-msg:dewpoint instead.")
-  (dewpoint m))
+(cl:ensure-generic-function 'rainfall-val :lambda-list '(m))
+(cl:defmethod rainfall-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:rainfall-val is deprecated.  Use weather_cpp-msg:rainfall instead.")
+  (rainfall m))
 
-(cl:ensure-generic-function 'visibility-val :lambda-list '(m))
-(cl:defmethod visibility-val ((m <CurrentCondition>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:visibility-val is deprecated.  Use weather_cpp-msg:visibility instead.")
-  (visibility m))
+(cl:ensure-generic-function 'icefall-val :lambda-list '(m))
+(cl:defmethod icefall-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:icefall-val is deprecated.  Use weather_cpp-msg:icefall instead.")
+  (icefall m))
 
-(cl:ensure-generic-function 'windchill-val :lambda-list '(m))
-(cl:defmethod windchill-val ((m <CurrentCondition>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:windchill-val is deprecated.  Use weather_cpp-msg:windchill instead.")
-  (windchill m))
+(cl:ensure-generic-function 'snowfall-val :lambda-list '(m))
+(cl:defmethod snowfall-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:snowfall-val is deprecated.  Use weather_cpp-msg:snowfall instead.")
+  (snowfall m))
 
-(cl:ensure-generic-function 'lastUpdate-val :lambda-list '(m))
-(cl:defmethod lastUpdate-val ((m <CurrentCondition>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:lastUpdate-val is deprecated.  Use weather_cpp-msg:lastUpdate instead.")
-  (lastUpdate m))
+(cl:ensure-generic-function 'probTornado-val :lambda-list '(m))
+(cl:defmethod probTornado-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:probTornado-val is deprecated.  Use weather_cpp-msg:probTornado instead.")
+  (probTornado m))
+
+(cl:ensure-generic-function 'probHail-val :lambda-list '(m))
+(cl:defmethod probHail-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:probHail-val is deprecated.  Use weather_cpp-msg:probHail instead.")
+  (probHail m))
+
+(cl:ensure-generic-function 'probThunderWind-val :lambda-list '(m))
+(cl:defmethod probThunderWind-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:probThunderWind-val is deprecated.  Use weather_cpp-msg:probThunderWind instead.")
+  (probThunderWind m))
+
+(cl:ensure-generic-function 'probExTornado-val :lambda-list '(m))
+(cl:defmethod probExTornado-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:probExTornado-val is deprecated.  Use weather_cpp-msg:probExTornado instead.")
+  (probExTornado m))
+
+(cl:ensure-generic-function 'probExHail-val :lambda-list '(m))
+(cl:defmethod probExHail-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:probExHail-val is deprecated.  Use weather_cpp-msg:probExHail instead.")
+  (probExHail m))
+
+(cl:ensure-generic-function 'probExThunderWind-val :lambda-list '(m))
+(cl:defmethod probExThunderWind-val ((m <CurrentCondition>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader weather_cpp-msg:probExThunderWind-val is deprecated.  Use weather_cpp-msg:probExThunderWind instead.")
+  (probExThunderWind m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <CurrentCondition>) ostream)
   "Serializes a message object of type '<CurrentCondition>"
   (roslisp-msg-protocol:serialize (cl:slot-value msg 'header) ostream)
-  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'temperature))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
-  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'temperature))
-  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'humidity))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
-  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'humidity))
-  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'windSpeed))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
-  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'windSpeed))
-  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'dewpoint))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
-  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'dewpoint))
-  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'visibility))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
-  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'visibility))
-  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'windchill))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
-  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'windchill))
-  (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'lastUpdate))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
-  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'lastUpdate))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'tempMax))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'tempHourly))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'tempApparent))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'rainfall))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'icefall))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'snowfall))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'probTornado))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'probHail))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'probThunderWind))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'probExTornado))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'probExHail))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'probExThunderWind))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <CurrentCondition>) istream)
   "Deserializes a message object of type '<CurrentCondition>"
   (roslisp-msg-protocol:deserialize (cl:slot-value msg 'header) istream)
-    (cl:let ((__ros_str_len 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'temperature) (cl:make-string __ros_str_len))
-      (cl:dotimes (__ros_str_idx __ros_str_len msg)
-        (cl:setf (cl:char (cl:slot-value msg 'temperature) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
-    (cl:let ((__ros_str_len 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'humidity) (cl:make-string __ros_str_len))
-      (cl:dotimes (__ros_str_idx __ros_str_len msg)
-        (cl:setf (cl:char (cl:slot-value msg 'humidity) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
-    (cl:let ((__ros_str_len 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'windSpeed) (cl:make-string __ros_str_len))
-      (cl:dotimes (__ros_str_idx __ros_str_len msg)
-        (cl:setf (cl:char (cl:slot-value msg 'windSpeed) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
-    (cl:let ((__ros_str_len 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'dewpoint) (cl:make-string __ros_str_len))
-      (cl:dotimes (__ros_str_idx __ros_str_len msg)
-        (cl:setf (cl:char (cl:slot-value msg 'dewpoint) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
-    (cl:let ((__ros_str_len 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'visibility) (cl:make-string __ros_str_len))
-      (cl:dotimes (__ros_str_idx __ros_str_len msg)
-        (cl:setf (cl:char (cl:slot-value msg 'visibility) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
-    (cl:let ((__ros_str_len 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'windchill) (cl:make-string __ros_str_len))
-      (cl:dotimes (__ros_str_idx __ros_str_len msg)
-        (cl:setf (cl:char (cl:slot-value msg 'windchill) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
-    (cl:let ((__ros_str_len 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'lastUpdate) (cl:make-string __ros_str_len))
-      (cl:dotimes (__ros_str_idx __ros_str_len msg)
-        (cl:setf (cl:char (cl:slot-value msg 'lastUpdate) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'tempMax) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'tempHourly) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'tempApparent) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'rainfall) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'icefall) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'snowfall) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'probTornado) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'probHail) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'probThunderWind) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'probExTornado) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'probExHail) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'probExThunderWind) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<CurrentCondition>)))
@@ -211,36 +295,46 @@
   "weather_cpp/CurrentCondition")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<CurrentCondition>)))
   "Returns md5sum for a message object of type '<CurrentCondition>"
-  "26bdc8d77dad89eb3673a16e5de86c17")
+  "54daa0cddcc3580a66a58d3b3c94c3d1")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'CurrentCondition)))
   "Returns md5sum for a message object of type 'CurrentCondition"
-  "26bdc8d77dad89eb3673a16e5de86c17")
+  "54daa0cddcc3580a66a58d3b3c94c3d1")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<CurrentCondition>)))
   "Returns full string definition for message of type '<CurrentCondition>"
-  (cl:format cl:nil "Header header~%string temperature~%string humidity~%string windSpeed~%string dewpoint~%string visibility~%string windchill~%string lastUpdate~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%float32 tempMax~%float32 tempHourly~%float32 tempApparent~%float32 rainfall~%float32 icefall~%float32 snowfall~%float32 probTornado~%float32 probHail~%float32 probThunderWind~%float32 probExTornado~%float32 probExHail~%float32 probExThunderWind~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'CurrentCondition)))
   "Returns full string definition for message of type 'CurrentCondition"
-  (cl:format cl:nil "Header header~%string temperature~%string humidity~%string windSpeed~%string dewpoint~%string visibility~%string windchill~%string lastUpdate~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%float32 tempMax~%float32 tempHourly~%float32 tempApparent~%float32 rainfall~%float32 icefall~%float32 snowfall~%float32 probTornado~%float32 probHail~%float32 probThunderWind~%float32 probExTornado~%float32 probExHail~%float32 probExThunderWind~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <CurrentCondition>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
-     4 (cl:length (cl:slot-value msg 'temperature))
-     4 (cl:length (cl:slot-value msg 'humidity))
-     4 (cl:length (cl:slot-value msg 'windSpeed))
-     4 (cl:length (cl:slot-value msg 'dewpoint))
-     4 (cl:length (cl:slot-value msg 'visibility))
-     4 (cl:length (cl:slot-value msg 'windchill))
-     4 (cl:length (cl:slot-value msg 'lastUpdate))
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
+     4
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <CurrentCondition>))
   "Converts a ROS message object to a list"
   (cl:list 'CurrentCondition
     (cl:cons ':header (header msg))
-    (cl:cons ':temperature (temperature msg))
-    (cl:cons ':humidity (humidity msg))
-    (cl:cons ':windSpeed (windSpeed msg))
-    (cl:cons ':dewpoint (dewpoint msg))
-    (cl:cons ':visibility (visibility msg))
-    (cl:cons ':windchill (windchill msg))
-    (cl:cons ':lastUpdate (lastUpdate msg))
+    (cl:cons ':tempMax (tempMax msg))
+    (cl:cons ':tempHourly (tempHourly msg))
+    (cl:cons ':tempApparent (tempApparent msg))
+    (cl:cons ':rainfall (rainfall msg))
+    (cl:cons ':icefall (icefall msg))
+    (cl:cons ':snowfall (snowfall msg))
+    (cl:cons ':probTornado (probTornado msg))
+    (cl:cons ':probHail (probHail msg))
+    (cl:cons ':probThunderWind (probThunderWind msg))
+    (cl:cons ':probExTornado (probExTornado msg))
+    (cl:cons ':probExHail (probExHail msg))
+    (cl:cons ':probExThunderWind (probExThunderWind msg))
 ))

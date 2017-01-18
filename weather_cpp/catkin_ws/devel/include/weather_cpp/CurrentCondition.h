@@ -26,23 +26,33 @@ struct CurrentCondition_
 
   CurrentCondition_()
     : header()
-    , temperature()
-    , humidity()
-    , windSpeed()
-    , dewpoint()
-    , visibility()
-    , windchill()
-    , lastUpdate()  {
+    , tempMax(0.0)
+    , tempHourly(0.0)
+    , tempApparent(0.0)
+    , rainfall(0.0)
+    , icefall(0.0)
+    , snowfall(0.0)
+    , probTornado(0.0)
+    , probHail(0.0)
+    , probThunderWind(0.0)
+    , probExTornado(0.0)
+    , probExHail(0.0)
+    , probExThunderWind(0.0)  {
     }
   CurrentCondition_(const ContainerAllocator& _alloc)
     : header(_alloc)
-    , temperature(_alloc)
-    , humidity(_alloc)
-    , windSpeed(_alloc)
-    , dewpoint(_alloc)
-    , visibility(_alloc)
-    , windchill(_alloc)
-    , lastUpdate(_alloc)  {
+    , tempMax(0.0)
+    , tempHourly(0.0)
+    , tempApparent(0.0)
+    , rainfall(0.0)
+    , icefall(0.0)
+    , snowfall(0.0)
+    , probTornado(0.0)
+    , probHail(0.0)
+    , probThunderWind(0.0)
+    , probExTornado(0.0)
+    , probExHail(0.0)
+    , probExThunderWind(0.0)  {
   (void)_alloc;
     }
 
@@ -51,26 +61,41 @@ struct CurrentCondition_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _temperature_type;
-  _temperature_type temperature;
+   typedef float _tempMax_type;
+  _tempMax_type tempMax;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _humidity_type;
-  _humidity_type humidity;
+   typedef float _tempHourly_type;
+  _tempHourly_type tempHourly;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _windSpeed_type;
-  _windSpeed_type windSpeed;
+   typedef float _tempApparent_type;
+  _tempApparent_type tempApparent;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _dewpoint_type;
-  _dewpoint_type dewpoint;
+   typedef float _rainfall_type;
+  _rainfall_type rainfall;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _visibility_type;
-  _visibility_type visibility;
+   typedef float _icefall_type;
+  _icefall_type icefall;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _windchill_type;
-  _windchill_type windchill;
+   typedef float _snowfall_type;
+  _snowfall_type snowfall;
 
-   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _lastUpdate_type;
-  _lastUpdate_type lastUpdate;
+   typedef float _probTornado_type;
+  _probTornado_type probTornado;
+
+   typedef float _probHail_type;
+  _probHail_type probHail;
+
+   typedef float _probThunderWind_type;
+  _probThunderWind_type probThunderWind;
+
+   typedef float _probExTornado_type;
+  _probExTornado_type probExTornado;
+
+   typedef float _probExHail_type;
+  _probExHail_type probExHail;
+
+   typedef float _probExThunderWind_type;
+  _probExThunderWind_type probExThunderWind;
 
 
 
@@ -149,12 +174,12 @@ struct MD5Sum< ::weather_cpp::CurrentCondition_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "26bdc8d77dad89eb3673a16e5de86c17";
+    return "54daa0cddcc3580a66a58d3b3c94c3d1";
   }
 
   static const char* value(const ::weather_cpp::CurrentCondition_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x26bdc8d77dad89ebULL;
-  static const uint64_t static_value2 = 0x3673a16e5de86c17ULL;
+  static const uint64_t static_value1 = 0x54daa0cddcc3580aULL;
+  static const uint64_t static_value2 = 0x66a58d3b3c94c3d1ULL;
 };
 
 template<class ContainerAllocator>
@@ -174,13 +199,18 @@ struct Definition< ::weather_cpp::CurrentCondition_<ContainerAllocator> >
   static const char* value()
   {
     return "Header header\n\
-string temperature\n\
-string humidity\n\
-string windSpeed\n\
-string dewpoint\n\
-string visibility\n\
-string windchill\n\
-string lastUpdate\n\
+float32 tempMax\n\
+float32 tempHourly\n\
+float32 tempApparent\n\
+float32 rainfall\n\
+float32 icefall\n\
+float32 snowfall\n\
+float32 probTornado\n\
+float32 probHail\n\
+float32 probThunderWind\n\
+float32 probExTornado\n\
+float32 probExHail\n\
+float32 probExThunderWind\n\
 \n\
 ================================================================================\n\
 MSG: std_msgs/Header\n\
@@ -218,13 +248,18 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
-      stream.next(m.temperature);
-      stream.next(m.humidity);
-      stream.next(m.windSpeed);
-      stream.next(m.dewpoint);
-      stream.next(m.visibility);
-      stream.next(m.windchill);
-      stream.next(m.lastUpdate);
+      stream.next(m.tempMax);
+      stream.next(m.tempHourly);
+      stream.next(m.tempApparent);
+      stream.next(m.rainfall);
+      stream.next(m.icefall);
+      stream.next(m.snowfall);
+      stream.next(m.probTornado);
+      stream.next(m.probHail);
+      stream.next(m.probThunderWind);
+      stream.next(m.probExTornado);
+      stream.next(m.probExHail);
+      stream.next(m.probExThunderWind);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -246,20 +281,30 @@ struct Printer< ::weather_cpp::CurrentCondition_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
-    s << indent << "temperature: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.temperature);
-    s << indent << "humidity: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.humidity);
-    s << indent << "windSpeed: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.windSpeed);
-    s << indent << "dewpoint: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.dewpoint);
-    s << indent << "visibility: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.visibility);
-    s << indent << "windchill: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.windchill);
-    s << indent << "lastUpdate: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.lastUpdate);
+    s << indent << "tempMax: ";
+    Printer<float>::stream(s, indent + "  ", v.tempMax);
+    s << indent << "tempHourly: ";
+    Printer<float>::stream(s, indent + "  ", v.tempHourly);
+    s << indent << "tempApparent: ";
+    Printer<float>::stream(s, indent + "  ", v.tempApparent);
+    s << indent << "rainfall: ";
+    Printer<float>::stream(s, indent + "  ", v.rainfall);
+    s << indent << "icefall: ";
+    Printer<float>::stream(s, indent + "  ", v.icefall);
+    s << indent << "snowfall: ";
+    Printer<float>::stream(s, indent + "  ", v.snowfall);
+    s << indent << "probTornado: ";
+    Printer<float>::stream(s, indent + "  ", v.probTornado);
+    s << indent << "probHail: ";
+    Printer<float>::stream(s, indent + "  ", v.probHail);
+    s << indent << "probThunderWind: ";
+    Printer<float>::stream(s, indent + "  ", v.probThunderWind);
+    s << indent << "probExTornado: ";
+    Printer<float>::stream(s, indent + "  ", v.probExTornado);
+    s << indent << "probExHail: ";
+    Printer<float>::stream(s, indent + "  ", v.probExHail);
+    s << indent << "probExThunderWind: ";
+    Printer<float>::stream(s, indent + "  ", v.probExThunderWind);
   }
 };
 
